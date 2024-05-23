@@ -6,7 +6,7 @@ export default function Navbar() {
   return (
     <nav className={styles.navbar}>
       <Link to="/">
-        <img src="logo.png" alt="Logo" />
+        <img src="logo.png" className={styles.logo} alt="Logo" />
       </Link>
 
       <Box className={styles.searchbar}>
