@@ -5,9 +5,12 @@ import Section from "../../components/Section/Section";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Button } from "@mui/material";
+
 export default function Home() {
   const [topAlbums, setTopAlbums] = useState([]);
   const [newAlbum, setNewAlbum] = useState([]);
+  const [topAlbumCollapse, setTopAlbumCollapse] = useState(true);
+  const [newAlbumCollapse, setNewAlbumCollapse] = useState(true);
   useEffect(() => {
     axios
       .get("https://qtify-backend-labs.crio.do/albums/top")
@@ -25,19 +28,24 @@ export default function Home() {
     <div>
       <Navbar></Navbar>
       <Hero></Hero>
+
       <div className={styles.section}>
         <div className={styles.title}>
           <p>Top Albums</p>
-          <Button>Collapse</Button>
+          <Button onClick={() => setTopAlbumCollapse(!topAlbumCollapse)}>
+            {topAlbumCollapse ? "Show all" : "Collapse"}
+          </Button>
         </div>
-        <Section data={topAlbums} type="album" />
+        <Section data={topAlbums} collapsed={topAlbumCollapse} type="album" />
       </div>
       <div className={styles.section}>
         <div className={styles.title}>
           <p>New Albums</p>
-          <Button>Collapse</Button>
+          <Button onClick={() => setNewAlbumCollapse(!newAlbumCollapse)}>
+            {newAlbumCollapse ? "Show all" : "Collapse"}
+          </Button>
         </div>
-        <Section data={newAlbum} type="album" />
+        <Section data={newAlbum} collapsed={newAlbumCollapse} type="album" />
       </div>
     </div>
   );
