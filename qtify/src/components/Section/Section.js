@@ -6,7 +6,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "./Section.module.css";
 import SwiperNavigationButtons from "../SwiperNavigationButtons/SwiperNavigationButtons";
-import { useScrollTrigger } from "@mui/material";
+import { Tooltip, useScrollTrigger } from "@mui/material";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Filters from "../Filters/Filters";

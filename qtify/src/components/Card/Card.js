@@ -1,4 +1,4 @@
-import { Chip } from "@mui/material";
+import { Chip, Tooltip } from "@mui/material";
 import "./Card.module.css";
 import styles from "./Card.module.css";
 
@@ -6,19 +6,21 @@ export default function Card({ data, type }) {
   switch (type) {
     case "album": {
       //slug is the id of the album
-      const { image, follows, title, slug, song } = data;
+      const { image, follows, title, slug, songs } = data;
       return (
-        <div className={styles.card}>
-          <div className={styles.content}>
-            <img src={image} alt="album cover"></img>
-            <Chip
-              label={`${follows} Follows`}
-              size="small"
-              className={styles.chip}
-            />
+        <Tooltip arrow title={`${songs.length} Songs`} placement="top">
+          <div className={styles.card}>
+            <div className={styles.content}>
+              <img src={image} alt="album cover"></img>
+              <Chip
+                label={`${follows} Follows`}
+                size="small"
+                className={styles.chip}
+              />
+            </div>
+            <div className={styles.title}>{title}</div>
           </div>
-          <div className={styles.title}>{title}</div>
-        </div>
+        </Tooltip>
       );
     }
     case "song": {
