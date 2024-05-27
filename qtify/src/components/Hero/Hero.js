@@ -1,4 +1,3 @@
-import Card from "../Card/Card";
 import "./Hero.module.css";
 import styles from "./Hero.module.css";
 

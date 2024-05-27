@@ -9,8 +9,18 @@ import { Button } from "@mui/material";
 export default function Home() {
   const [topAlbums, setTopAlbums] = useState([]);
   const [newAlbum, setNewAlbum] = useState([]);
+  const [songs, setSongs] = useState([]);
   const [topAlbumCollapse, setTopAlbumCollapse] = useState(true);
   const [newAlbumCollapse, setNewAlbumCollapse] = useState(true);
+
+  const fetchFilters = async () => {
+    try {
+      const res = await axios.get("https://qtify-backend-labs.crio.do/genres");
+      return res.data;
+    } catch (err) {
+      console.log(err);
+    }
+  };
   useEffect(() => {
     axios
       .get("https://qtify-backend-labs.crio.do/albums/top")
@@ -22,6 +32,9 @@ export default function Home() {
       .then((response) => {
         setNewAlbum(response.data);
       });
+    axios.get("https://qtify-backend-labs.crio.do/songs").then((response) => {
+      setSongs(response.data);
+    });
   }, []);
 
   return (
@@ -46,6 +59,17 @@ export default function Home() {
           </Button>
         </div>
         <Section data={newAlbum} collapsed={newAlbumCollapse} type="album" />
+      </div>
+      <div className={styles.section}>
+        <div className={styles.title}>
+          <p>Songs</p>
+        </div>
+        <Section
+          data={songs}
+          collapsed={true}
+          type="song"
+          filterSource={fetchFilters}
+        />
       </div>
     </div>
   );

@@ -10,7 +10,7 @@ export default function Card({ data, type }) {
       return (
         <div className={styles.card}>
           <div className={styles.content}>
-            <img src={image}></img>
+            <img src={image} alt="album cover"></img>
             <Chip
               label={`${follows} Follows`}
               size="small"
@@ -20,6 +20,25 @@ export default function Card({ data, type }) {
           <div className={styles.title}>{title}</div>
         </div>
       );
+    }
+    case "song": {
+      const { image, likes, title, id } = data;
+      return (
+        <div className={styles.card}>
+          <div className={styles.content}>
+            <img src={image} alt="song cover"></img>
+            <Chip
+              label={`${likes} Likes`}
+              size="small"
+              className={styles.chip}
+            />
+          </div>
+          <div className={styles.title}>{title}</div>
+        </div>
+      );
+    }
+    default: {
+      return <></>;
     }
   }
 }
