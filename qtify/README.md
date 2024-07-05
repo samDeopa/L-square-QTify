@@ -1,70 +1,125 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# QTify
 
-## Available Scripts
+QTify is a song-browsing application built from scratch using ReactJS, paired with Material UI and Swiper, to deliver a seamless and aesthetic user interface. It offers songs from different albums and genres for music lovers.
 
-In the project directory, you can run:
+## Table of Contents
 
-### `npm start`
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Setup and Installation](#setup-and-installation)
+- [Usage](#usage)
+- [Project Structure](#project-structure)
+- [Contributing](#contributing)
+- [License](#license)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **User Interface:**
+  - Built using ReactJS and Material UI for a responsive and visually appealing design.
+  - Integrated Swiper for a smooth carousel experience.
 
-### `npm test`
+- **Song Browsing:**
+  - Browse songs by different albums and genres.
+  - Genre-based song filtering system using modified Material UI tabs.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **REST API Integration:**
+  - Fetch and display data served by the backend server.
 
-### `npm run build`
+## Technologies Used
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Frontend:**
+  - ReactJS
+  - Material UI
+  - Swiper
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Tools:**
+  - REST APIs
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Setup and Installation
 
-### `npm run eject`
+1. **Clone the repository:**
+   ```sh
+   git clone https://github.com/yourusername/QTify.git
+   cd QTify
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+2. **Install dependencies:**
+   ```sh
+   npm install
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. **Run the application:**
+   ```sh
+   npm start
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Usage
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. **Home Page:**
+   - Displays a carousel of popular songs and albums.
+   - Provides a search bar to look for songs by title or artist.
 
-## Learn More
+2. **Genre Filtering:**
+   - Users can filter songs by selecting their preferred genre from the tabs.
+   - The song list updates dynamically based on the selected genre.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Project Structure
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+QTify/
+├── public/
+│   ├── index.html
+│   └── ...
+├── src/
+│   ├── components/
+│   │   ├── Card.js
+│   │   ├── Carousel.js
+│   │   └── ...
+│   ├── pages/
+│   │   ├── HomePage.js
+│   │   └── ...
+│   ├── services/
+│   │   └── api.js
+│   ├── App.js
+│   ├── index.js
+│   └── ...
+├── package.json
+└── README.md
+```
 
-### Code Splitting
+## Learnings
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+While building this Micro-Experience, the developer:
 
-### Analyzing the Bundle Size
+- Conducted a thorough analysis of the provided Figma design, successfully identifying and documenting required front-end components.
+- Created modular UI components including Cards, Carousels, and Buttons, optimizing for reusability across various sections of the application.
+- Implemented an intuitive genre-based song filtering system using a tab component by modifying the one provided by Material UI, allowing users to browse songs by their preferred genre effortlessly.
+- Utilized REST APIs to fetch data served by the backend server.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Contributing
 
-### Making a Progressive Web App
+Contributions are welcome! Please open an issue or submit a pull request for any bugs, enhancements, or features you would like to add.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+1. **Fork the repository:**
+   ```sh
+   git fork https://github.com/yourusername/QTify.git
+   ```
 
-### Advanced Configuration
+2. **Create a new branch:**
+   ```sh
+   git checkout -b feature-branch
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+3. **Make your changes and commit them:**
+   ```sh
+   git commit -m "Description of changes"
+   ```
 
-### Deployment
+4. **Push to the branch:**
+   ```sh
+   git push origin feature-branch
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+5. **Open a pull request:**
+   - Go to the repository on GitHub and open a pull request.
